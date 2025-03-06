@@ -1,15 +1,26 @@
+'use client'
+
 import {Button} from "@/components/ui/button";
 import successFactors from "../assets/images/undraw_success-factors_i417.svg";
 import Image from "next/image";
+import {useRouter} from "next/navigation";
 
 export default function Home() {
+    const router = useRouter()
+
     return (
         <div className={'col-span-full grid grid-cols-12'}>
             {/* header */}
             <header className={'col-span-full h-fit grid grid-cols-12 items-center py-3'}>
                 <span className={'col-start-2 font-semibold text-2xl'}> Expirou </span>
 
-                <Button variant={'link'} className={'col-start-11'}>Login</Button>
+                <Button
+                    variant={'link'}
+                    className={'col-start-11'}
+                    onClick={() => {
+                        router.push('/login')
+                    }}
+                >Login</Button>
             </header>
 
             {/* presentation */}
@@ -18,7 +29,7 @@ export default function Home() {
                 <div className={'col-span-full flex gap-6'}>
                     <div className={'flex flex-col gap-6'}>
                         <h1 className={'text-nowrap text-4xl'}>O que a expirei pode fazer por você ?</h1>
-                        <h3 className={'text-sm w-3/4 bg-green-300'}>
+                        <h3 className={'text-sm w-3/4'}>
                             Facilitamos o gerenciamento das suas assinaturas,
                             oferecendo uma visão clara dos seus gastos e notificações
                             inteligentes para que você tenha mais controle, economia e faça as melhores escolhas.
