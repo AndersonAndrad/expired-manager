@@ -22,7 +22,7 @@ export function PageTemplate({children}: PageTemplateProps) {
                     </Avatar>
                 </div>
             </header>
-            <div className={'h-[90%]'}>
+            <div className={'h-[90%] px-4'}>
                 {children}
             </div>
         </div>
