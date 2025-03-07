@@ -1,10 +1,11 @@
 import {PageTemplate} from "@/components/templates/page.template";
 import {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
-import {DollarSign, Plus, Trash2} from "lucide-react";
+import {DollarSign, Trash2} from "lucide-react";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import {subscriptions} from "@/core/mock/subscriptions.mock";
 import {formatDate} from "@/core/utils/date.utils";
+import CreateSubscriptionDialog from "@/components/subscription/create-subscription-dialog";
 
 export default function Subscription() {
     return (
@@ -14,7 +15,7 @@ export default function Subscription() {
                     <h1>Assinaturas</h1>
                     <div className={'flex items-center gap-3 w-2/5 '}>
                         <Input placeholder={'Qual o nome da sua assinatura ?'}/>
-                        <Button>Nova assinatura <Plus/></Button>
+                        <CreateSubscriptionDialog/>
                     </div>
                 </header>
 
