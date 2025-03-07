@@ -1,11 +1,13 @@
-import {PageTemplate} from "@/components/templates/page.template";
-import {Input} from "@/components/ui/input";
-import {Button} from "@/components/ui/button";
-import {DollarSign, Trash2} from "lucide-react";
-import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
-import {subscriptions} from "@/core/mock/subscriptions.mock";
-import {formatDate} from "@/core/utils/date.utils";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { DollarSign } from "lucide-react";
+
 import CreateSubscriptionDialog from "@/components/subscription/create-subscription-dialog";
+import DeleteSubscriptionAlert from "@/components/subscription/delete-subscription-alert";
+import { PageTemplate } from "@/components/templates/page.template";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { subscriptions } from "@/core/mock/subscriptions.mock";
+import { formatDate } from "@/core/utils/date.utils";
 
 export default function Subscription() {
     return (
@@ -14,8 +16,8 @@ export default function Subscription() {
                 <header className={'flex items-center justify-between'}>
                     <h1>Assinaturas</h1>
                     <div className={'flex items-center gap-3 w-2/5 '}>
-                        <Input placeholder={'Qual o nome da sua assinatura ?'}/>
-                        <CreateSubscriptionDialog/>
+                        <Input placeholder={'Qual o nome da sua assinatura ?'} />
+                        <CreateSubscriptionDialog />
                     </div>
                 </header>
 
@@ -42,9 +44,8 @@ export default function Subscription() {
                                     <TableCell>R$100,00</TableCell>
                                     <TableCell>{subscription.payed ? 'Sim' : 'Não'}</TableCell>
                                     <TableCell className={'flex items-center gap-3'}>
-                                        <Button variant={'secondary'}><DollarSign/></Button>
-                                        <Button variant={'destructive'}><Trash2/></Button>
-
+                                        <Button variant={'secondary'}><DollarSign /></Button>
+                                        <DeleteSubscriptionAlert />
                                     </TableCell>
                                 </TableRow>
                             ))}
